@@ -13,3 +13,10 @@
 .title{
     margin-left: 45%;
 }
+
+.allPosts{
+    display: flex;
+    flex-direction: column;
+    
+    
+}
