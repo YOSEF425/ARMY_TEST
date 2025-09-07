@@ -1,0 +1,12 @@
+.post{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 30%;
+    
+}
+
+.poster{
+    color: brown;
+    font-weight: 600;
+}
