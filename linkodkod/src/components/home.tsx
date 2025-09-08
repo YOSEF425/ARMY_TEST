@@ -1,20 +1,26 @@
-import { useState } from "react"
-import Post2 from "./post2"
+import Slogen from './application-layout/slogen.tsx'
+import Logo from './application-layout/logo.tsx'
 import '../style/home.css'
-import AllPosts from "./allPosts"
+
 
 
 export default function Home(){
-    const [logo,setLogo] = useState('https://lh3.googleusercontent.com/drive-storage/AJQWtBNgz56M2ll7koj8FJ57ab8oBRkLKbJyPIwhtcVGOuZ7BIzqrspbCKxVAYtEmqWjZuFbmp5YtocSihMkqUXW-J3rVSJN5frINW5UvLiBe9l5Pg=w1909-h885?auditContext=forDisplay')
 
    
     return(
         <div>
-          <div className="topLine">
-            <h3 className="title">Welcome to Linkodkod</h3>
-            <img src={logo} alt="logo" className="logo"/>
-          </div>
-          <AllPosts/>
+          <div className='logo'>
+           <Logo/>
+           </div>
+           
+            <div className='slogan'>
+           <Slogen/>
+           </div>
+
+           
+
+         
+          
       
         </div>
     )

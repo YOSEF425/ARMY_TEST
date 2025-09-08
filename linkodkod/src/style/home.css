@@ -1,24 +1,9 @@
-.topLine{
-    display: flex;
-    justify-content:space-between;
+.slogan{
+
+    text-align: center;
 }
-
-
 
 .logo{
-    width: 4%;
-    align-content: end;
-}
-
-.title{
-    margin-left: 45%;
-}
-
-.allPosts{
-    display: flex;
-    flex-direction: column;
-  
-    
-    
-    
+    text-align: right;
+    width: 5vw;
 }
