@@ -1,11 +1,26 @@
 import Post2 from "./post2"
 import '../style/home.css'
+import { useState } from "react";
+import fs from 'fs'
+import { json } from "stream/consumers";
+
+
 
 
 export default function AllPosts(){
+    const[postsim,setPostsim] = useState([])
+
+    fs.readFile('posts.json',function(err,data){
+        if(err){
+            throw err;
+        }
+        setPostsim(JSON.parse(data as any))
+    })
+
     return(
        <>
             <div className="allPosts">
+               
                     <Post2 name="yosef" url="https://tse1.mm.bing.net/th/id/OIP.OoKvKUPuOpqOJIu6FgqvjAHaFG?w=263&h=181&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" description="
                     Elephants are the largest living land animals. Three living species are currently recognised: the African bush elephant (Loxodonta africana), the African forest elephant (L. cyclotis), and the Asian elephant (Elephas maximus). They are the only surviving members of the family Elephantidae and the order Proboscidea" />
                     
