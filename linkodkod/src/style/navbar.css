@@ -1,0 +1,9 @@
+.Navbar{
+    display: flex;
+    justify-content: center;
+    height: 5vh;
+    gap: 3%;
+    
+   
+}
+

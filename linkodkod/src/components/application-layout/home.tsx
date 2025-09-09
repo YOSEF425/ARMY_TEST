@@ -1,8 +1,8 @@
 import Slogen from './slogen.tsx'
 import Logo from './logo.tsx'
 import '../../style/home.css'
-import Post2 from './post2.tsx'
 import AllPosts from './allPosts.tsx'
+import Navbar from './navbar.tsx'
 
 
 
@@ -20,6 +20,7 @@ export default function Home(){
            <Slogen/>
            </div>
            </div>
+           <Navbar/>
             <AllPosts/>
            
 

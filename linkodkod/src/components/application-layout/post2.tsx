@@ -3,13 +3,15 @@ import '../../style/home.css'
 import '../../style/likes.css'
 
 type post = {
+    "id":string,
     "authorName":string,
     "url": string,
     "description":string
+
    
 }
 
-export default function Post2({authorName,url,description}:post){
+export default function Post2({id,authorName,url,description}:post){
     const[likes,setLikes] = useState(0)
     const[dislikes,setDislikes] = useState(0)
     const date = new Date();

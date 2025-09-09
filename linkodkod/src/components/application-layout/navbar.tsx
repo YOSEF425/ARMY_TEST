@@ -1,13 +1,13 @@
 import { Link } from "react-router";
+import '../../style/navbar.css'
 
 export default function Navbar(){
     return(
         <>
         <nav className='Navbar'>
 
-        <Link to="/">Home Page</Link>
-        <Link to="/Home">Home</Link>
-        <Link to="/Find Post">Find Post</Link>
+        <Link to="/" className="btn">Home Page</Link>
+        <Link to="/FindPost">Find Post</Link>
        
         
         </nav>
