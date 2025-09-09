@@ -1,6 +1,6 @@
 import express from 'express'
 import fs from 'fs'
-import {sayHello,getAllPosts,parsJson} from './controllers.js';
+import {sayHello,getAllPosts} from './controllers.js';
 
 
 

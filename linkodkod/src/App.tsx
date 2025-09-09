@@ -1,6 +1,6 @@
 import './App.css'
 import './components/post'
-import Home from './components/home'
+import Home from './components/application-layout/home'
 
 function App() {
 

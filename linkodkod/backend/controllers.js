@@ -1,30 +1,30 @@
-import fs from 'fs/promises'
-
-
-async function readFile() {
-  let parsed = []
-  try {
-    const data = await fs.readFile('posts.json', 'utf8');
-    parsed = await (JSON.parse(data))
-    return parsed
-
-  } catch (error) {
-    console.error('Error reading file:', error);
-    return
-  }
-}
+import * as fs from 'fs/promises';
+import { json } from 'stream/consumers';
 
 
 
 
 
-export const getAllPosts = (req,res) => {
+
+
+
+export async function getAllPosts(req,res){
+  
+    const raw = await fs.readFile('posts.json','utf-8')
+    const posts = JSON.parse(raw)
     
-    res.send(readFile())
+    res.json(posts)
+  
+ 
 }
+
+
 
 
 export const sayHello = (req,res) => {
+
     res.send("hello")
 }
+
+
 
