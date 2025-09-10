@@ -12,6 +12,9 @@ The project flow:
 3. "Controllers.tsx" is in charge of the buisness logic, responding to the client call.
 4. Users can uplaod posts which are then stored in a MONGO_DB collection.
 5. In the begining (default) stage of the game i just stored the posts in a json file.
+6. You have the ability to navigate between the different features of this app.
+
+
 
    
 
