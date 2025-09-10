@@ -3,6 +3,7 @@ import Logo from './logo.tsx'
 import '../../style/home.css'
 import AllPosts from './allPosts.tsx'
 import Navbar from './navbar.tsx'
+// import AllPosts2 from './allPosts2.tsx'
 
 
 

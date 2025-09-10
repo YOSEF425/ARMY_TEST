@@ -1,10 +1,10 @@
 import { useState } from "react"
+import Navbar from "./navbar";
 
-export default function Post(){
+export default function AddPost(){
   const [file, setFile] = useState(null);
   const [imgUrl,setImageUrl]  = useState('')
   const[description,setDescription] = useState('')
-  const[likes,setLikes] = useState('')
   const[name,setName] = useState('')
   const date = new Date();
   const showTime = date.getHours() 
@@ -12,6 +12,13 @@ export default function Post(){
         + ":" + date.getSeconds();
     
 
+    function handleSubmit(){
+        fetch('http://localhost:3000/addPost'),{
+           method: 'POST',
+           headers: { 'Content-Type': 'application/json' },
+           body: JSON.stringify({"url":imgUrl,"description":description,"name":name})
+    };
+    }
     
     
          
@@ -29,8 +36,9 @@ export default function Post(){
   
     return(
         <>
+        <Navbar/>
         <h3>Upload your Post here!</h3>
-        <form>
+        <form action="https://localhost:3000/addPost" onSubmit={handleSubmit}>
             <h3>Enter your name</h3>
                 <input
                 type="text"
@@ -52,15 +60,11 @@ export default function Post(){
                 onChange={handleDescription}
                 placeholder="description"
             />
-              <h2>Add Image:</h2>
-          
-            
-
-                
-                
-            
-
-            <p>Posted at:{showTime}</p>
+             
+              <button type="button" 
+                id="submitButton">
+              Submit
+          </button>
             
 
 

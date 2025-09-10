@@ -1,5 +1,6 @@
 import Post2 from "./post2"
 import '../../style/allPosts.css'
+import { useState } from "react"
 
 
 
@@ -7,7 +8,7 @@ import '../../style/allPosts.css'
 
 export default function AllPosts(){
 
-  
+    const[posts,setPosts] = useState([])
 
     return(
        <>

@@ -1,44 +1,57 @@
 import { useState } from "react"
 import '../../style/findPost.css'
 import Post2 from "./post2"
+import Navbar from "./navbar"
 
 export default function FindPost(){
     const[found,setFound] = useState(false)
-    const [id,setId] = useState('')
+    const[id,setId] = useState('')
     const[authorName,setAuthorName] = useState('')
     const[url,setUrl] = useState('')
     const[description,setDescription] = useState('')
+    const[error,setError] = useState('')
 
      function handleSubmit(e:any) {
         e.preventDefault();
       }
+     
+ 
+     const handleInputChange = (e:any) => {
+    setId(e.target.value);
+  };
 
-
-      async function fetchPost(id:any){
+      async function fetchPost(e:any){  
+        
+                                                          // fetches post by id
         try{
           const response = await fetch(`http://localhost:3000/posts/${id}`)
+          console.log("hi")
+          if (!response.ok) throw new Error("Failed to fetch data");
   
           const data = await response.json();
-          console.log(data)
           setAuthorName(data.name)
           setUrl(data.url)
           setDescription(data.description)
-          console.log(data)
 
         }catch(error){
-          console.log("no")
-
+          
+          setError("error")
+        }
+        if(error){
+          return <p>error</p>
+        }
+        else{
+          return <div>
+            <Post2 id={id} authorName={authorName} url={url} description={description}></Post2>
+          </div>
         }
       }
 
 
+
      
-      function handleChange(e:any) {    // When user clicks the "search" button the useState is set to that value
-                                       //  and we fetch the endpoint of that id.
-        setId(e.target.value);
-        console.log(id)
-        fetchPost(id)
-      }
+       
+       
 
 
 
@@ -46,13 +59,13 @@ export default function FindPost(){
 
     return(
         <>
-        
+        <Navbar/>
         <div className="searchBox">
         <h3>Find post by ID</h3>
         <div>Enter the ID of author in the box:</div>
-        <input type="text" name="id" title="ID" placeholder="ID" className="input"/>
+        <input type="text" value={id} onChange={handleInputChange} placeholder="ID" className="input"/>
         </div>
-        <button onClick={handleChange}>Search</button>
+        <button onClick={fetchPost}>Search</button>
         
         </>
     )

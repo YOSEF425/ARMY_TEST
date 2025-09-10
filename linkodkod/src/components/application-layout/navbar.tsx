@@ -8,6 +8,7 @@ export default function Navbar(){
 
         <Link to="/" className="btn">Home Page</Link>
         <Link to="/FindPost">Find Post</Link>
+        <Link to="/AddPost">Add Post</Link>
        
         
         </nav>
